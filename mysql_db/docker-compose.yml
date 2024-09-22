@@ -5,10 +5,10 @@ services:
     image: mysql:8.0
     container_name: mysql_db
     environment:
-      MYSQL_ROOT_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: ${PASSWORD_DB}
       MYSQL_DATABASE: asesco_db
-      MYSQL_USER: sysadmin
-      MYSQL_PASSWORD: 9192
+      MYSQL_USER: ${USERNAME_DB}
+      MYSQL_PASSWORD: ${PASSWORD_USR_DB}
 
     volumes:
       - db_data:/var/lib/mysql
