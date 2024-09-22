@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_db
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: asesco_db
+      MYSQL_USER: sysadmin
+      MYSQL_PASSWORD: 9192
+
+    volumes:
+      - db_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    networks:
+      - mysql_network
+
+volumes:
+  db_data:
+
+networks:
+  mysql_network:
+    driver: bridge
