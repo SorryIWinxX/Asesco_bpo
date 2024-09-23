@@ -16,7 +16,7 @@ archivo="mysql_$fecha.sql.gz"
 
 # elimina la opción --master-data si tu servidor no es maestro en replicación
 
-mysqldump --user=root --password=${ROOT_PASSWORD} --all-databases --opt --routines \
+mysqldump --user=root --password=${MYSQL_ROOT_PASSWORD} --all-databases --opt --routines \
 --add-drop-database --add-drop-table --complete-insert --create-options  | gzip > $archivo && \
 echo "Respaldo realizado exitosamente el `date`" >> bitacora.txt
 
